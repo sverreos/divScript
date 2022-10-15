@@ -1,5 +1,5 @@
 
-
+from termcolor import colored
 #from unittest import result
 
 
@@ -15,9 +15,9 @@ def start():
     elif valgt == 4:
         result = XorTwoStrings()
     else:
-        print("ugyldig nummer")
+        print(colored("ugyldig nummer",'red'))
 
-    print("\n \n Ditt resultat: " + result + "\n \n")
+    print(colored("\n \n Ditt resultat: " + result + "\n \n",'green'))
 
 
 
