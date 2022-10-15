@@ -10,7 +10,7 @@ def start():
     if valg == 1:
         sha256PsswdList()
     else:
-        print(colored("ugyldig input!",'red'))
+        print(colored("Ugyldig input!",'red'))
 
 
 def sha256PsswdList():
