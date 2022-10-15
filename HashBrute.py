@@ -1,6 +1,7 @@
 from urllib.request import urlopen
 import hashlib
 from termcolor import colored
+import sys
 
 
 def start():
@@ -30,6 +31,9 @@ def sha256PsswdList():
     except Exception as exc:
         print('There was a problem %s'%(exc))
 
+def bruteWithRockyou():
+    #https://towardsdev.com/building-a-hash-cracking-tool-using-python-ea15768409ef
+    textTobreak = input("enter text to bruteforce: ")
 
 
 start()

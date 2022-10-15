@@ -1,0 +1,4 @@
+1. auto unzipper, finn om mappe/fil er zippet, og unzip til kjærne
+2. rot brutefoce
+3. hash bruteforce
+4. 
