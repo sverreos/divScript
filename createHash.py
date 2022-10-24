@@ -8,6 +8,14 @@ def start():
 
     if valgt == 1:
         print()
+    elif valgt == 2:
+        print()
+    elif valgt == 3:
+        print()
+    elif valgt == 4:
+        print()
+    elif valgt == 5:
+        print()
 
 
 
