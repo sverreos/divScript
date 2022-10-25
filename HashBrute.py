@@ -43,27 +43,24 @@ def sha256PsswdList():
         print('There was a problem %s'%(exc))
 
 def hashPswdListWithWrapper():
-    #Problemer:
-    #nekter å loope, går inn i elif
-    #
-    #
     hashToCrack = input("enter hash to find: ")
     
     #[i.strip() for i in urlopen("https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english-no-swears.txt") if len(i) >= 12]
     try:
-        passwordList = str(urlopen("https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english-no-swears.txt"))
+        passwordList = str(urlopen("https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english-no-swears.txt").read(),'utf-8')
         for password in passwordList.split('\n'):
             #guess = "ictf{"+password.upper+"}"
             guess = password
+            #print(f"trying: {guess}")
             guess = hashlib.sha512(bytes(guess,'utf-8')).hexdigest()
-            print(f"trying: {guess}")
+            
             hashedguess = sha512(guess.encode()).hexdigest()
             if hashToCrack == guess:
                 print(colored(f"the correct word: {password}",'green'))
                 break
             elif hashToCrack != guess:
                 print("elif")
-                continue
+                #continue
             else:
                 print(colored(f"\n the password does  not match in the list...\n"),'red')
     except Exception as exc:
