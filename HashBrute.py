@@ -59,8 +59,8 @@ def hashPswdListWithWrapper():
                 print(colored(f"the correct word: {password}",'green'))
                 break
             elif hashToCrack != guess:
-                print("elif")
-                #continue
+                #print("")
+                continue
             else:
                 print(colored(f"\n the password does  not match in the list...\n"),'red')
     except Exception as exc:
@@ -78,6 +78,8 @@ def hashPswdListWithWrapper():
 
 
 def bruteforceHash(hashtype):
+    #noe galt
+    #!!! fungerer kun med hashed versjon av 1 ch
     wordlist = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+{}:;',./?-="
     y=''
     length=1

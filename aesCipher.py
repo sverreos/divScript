@@ -23,9 +23,9 @@ def start():
 
 def aesCBC():
     try:
-        iv = b64decode('1vpv5wtN9YSruAo1F8RmHw==')
-        ciphertext = b64decode('rSkw4++0Ovmyfjzry84I4A==')
-        key = b64decode('RFhwPj6FQ6u/mrrwbpEOKQ==')
+        iv = b64decode('ca0Zm2E8gMBpEoPcbXbTkg==')
+        ciphertext = b64decode('G9NHmpz6TL57qidzVdVMIkNuay12TQA9x3+unwgER9s=')
+        key = b64decode('0Ty7jOIsf3ZE6YXbXARlxg==')
         cipher = AES.new(key,AES.MODE_CBC,iv)
         plaintext = unpad(cipher.decrypt(ciphertext), AES.block_size)
         print(colored(f"decrypted message: \n {plaintext.decode()} \n", 'green'))
