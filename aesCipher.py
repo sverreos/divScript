@@ -6,7 +6,7 @@ from Cryptodome.Random import get_random_bytes
 from termcolor import colored
 
 def start():
-    print(colored("\n Ps:Data needs to be edited in code!",'red'))
+    print(colored("\n Ps:Data for deckryptering må settes inn i koden!",'red'))
     print("\n 1: AES CBC \n 2: create AES CBC\n")
     choice = int(input("make a choice: "))
 
@@ -15,7 +15,7 @@ def start():
     elif choice == 2:
         createAesCBC()
     else:
-        print("please enter a valid value :(")
+        print(colored("skriv inn en gyldig verdi!!! :(",'red'))
         start()
 
 
@@ -35,7 +35,7 @@ def aesCBC():
         print(colored('ERROR!!!','red'))
 
 def createAesCBC():
-    sensitiveData = input("enter the data to encrypt: ")
+    sensitiveData = input("skriv inn tekst som skal krypteres: ")
     key = get_random_bytes(16) #must be 16,24 or 32 bytes long
     cipher = AES.new(key, AES.MODE_CBC)
     cipherText = cipher.encrypt(pad(sensitiveData.encode(), AES.block_size))
